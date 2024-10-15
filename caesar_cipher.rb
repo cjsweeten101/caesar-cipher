@@ -15,13 +15,9 @@ def caesar_cipher(input_string, key)
 end
 
 def find_new_letter(letter, key)
-  alphabet = "abcdefghijklmnopqrstuvwxyz".split("")
-  new_index = alphabet.find_index(letter) + key
-  while new_index >= alphabet.length
-    new_index -= alphabet.length
-  end
+  alphabet = ("a".."z").to_a
+  new_index = alphabet.find_index(letter) + key % alphabet.length
   alphabet[new_index]
-
 end
 
-p caesar_cipher("Caesar is Ciphering", 65)
+p caesar_cipher("Caesar is Ciphering", 27)
