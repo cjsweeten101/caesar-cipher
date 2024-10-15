@@ -1,7 +1,4 @@
-require "pry-byebug"
-
 def caesar_cipher(input_string, key)
-  alphabet = "abcdefghijklmnopqrstuvwxyz".split("")
   input_string.split("").map do |letter|
     if letter == " "
       " "
